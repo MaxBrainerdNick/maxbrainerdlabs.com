@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Max Brainerd Labs</title>
+<link href="https://fonts.googleapis.com/css2?family=Righteous&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+--sage:#7C9A7E;
+--sage-light:#EEF3EE;
+--sage-mid:#B8CDB9;
+--sage-dark:#4A6B4C;
+--sage-pale:#F2F6F2;
+--ink:#1C1C1A;
+--ink-mid:#3D3D3A;
+--ink-muted:#7A7A75;
+--surface:#FFFFFF;
+--outline:2.5px solid #1C1C1A;
+--outline-thin:1.5px solid #1C1C1A;
+--font-display:'Righteous',cursive;
+--font-body:'Nunito',sans-serif;
+}
+
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--surface);color:var(--ink);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+
+nav{position:sticky;top:0;z-index:100;background:var(--surface);border-bottom:var(--outline);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:66px;}
+.nav-logo{font-family:var(--font-display);font-size:20px;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:10px;}
+.logo-mark{width:36px;height:36px;background:var(--sage);border:var(--outline);border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-size:17px;font-family:var(--font-display);flex-shrink:0;}
+.nav-logo span{color:var(--sage-dark)}
+.nav-links{display:flex;gap:1.75rem;list-style:none;align-items:center;}
+.nav-links a{font-family:var(--font-body);font-size:14px;font-weight:700;color:var(--ink-mid);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover{color:var(--sage-dark)}
+.nav-cta{background:var(--sage) !important;color:white !important;padding:9px 20px;border-radius:6px;border:var(--outline) !important;font-weight:800 !important;}
+.nav-cta:hover{background:var(--sage-dark) !important}
+
+.hero{background:var(--ink);padding:6.5rem 2rem 5.5rem;position:relative;overflow:hidden;border-bottom:var(--outline);}
+.hero-squiggle{position:absolute;right:5%;top:50%;transform:translateY(-50%);opacity:0.07;pointer-events:none;}
+.container{max-width:880px;margin:0 auto;position:relative}
+.hero-eyebrow{display:inline-block;background:var(--sage);color:white;font-family:var(--font-body);font-size:11px;font-weight:800;letter-spacing:0.15em;text-transform:uppercase;padding:5px 12px;border-radius:4px;border:var(--outline-thin);margin-bottom:1.5rem;}
+.hero h1{font-family:var(--font-display);font-size:clamp(2.6rem,5.5vw,4rem);color:#ffffff;line-height:1.12;max-width:660px;margin-bottom:1.5rem;}
+.hero h1 em{font-style:normal;color:var(--sage-mid);position:relative;display:inline-block;}
+.hero h1 em::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:4px;background:var(--sage);border-radius:2px;}
+.hero-sub{font-size:17px;color:#9A9A94;max-width:500px;margin-bottom:2.5rem;line-height:1.8;font-weight:600;}
+.hero-cta{display:inline-block;background:var(--sage);color:white;font-family:var(--font-body);font-weight:800;font-size:15px;padding:14px 30px;border-radius:6px;border:var(--outline);text-decoration:none;transition:transform 0.15s,background 0.2s;box-shadow:3px 3px 0 rgba(255,255,255,0.1);}
+.hero-cta:hover{background:var(--sage-dark);transform:translate(-1px,-2px)}
+
+section{padding:5rem 2rem}
+.section-label{display:inline-block;font-family:var(--font-body);font-size:11px;font-weight:800;letter-spacing:0.15em;text-transform:uppercase;color:var(--sage-dark);background:var(--sage-light);padding:4px 10px;border-radius:4px;border:1.5px solid var(--sage-mid);margin-bottom:1rem;}
+.section-title{font-family:var(--font-display);font-size:clamp(1.8rem,3.2vw,2.4rem);line-height:1.18;margin-bottom:1.25rem;color:var(--ink);}
+.section-body{font-size:16px;font-weight:600;color:var(--ink-mid);max-width:560px;line-height:1.8;}
+
+.grid-2x2{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:2.5rem;max-width:700px;}
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:2.5rem;max-width:700px;}
+
+.problem{background:var(--sage-pale);border-top:var(--outline);border-bottom:var(--outline)}
+
+.pain-item{background:var(--surface);border:var(--outline);border-radius:10px;padding:1.75rem;box-shadow:4px 4px 0 var(--ink);transition:transform 0.15s,box-shadow 0.15s;}
+.pain-item:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.pain-dash{font-size:22px;color:var(--sage);line-height:1;margin-bottom:0.75rem;}
+.pain-quote{font-size:15px;font-weight:600;color:var(--ink-mid);font-style:italic;line-height:1.7;}
+
+.service-card{background:var(--surface);border:var(--outline);border-radius:10px;padding:1.75rem;box-shadow:4px 4px 0 var(--ink);transition:transform 0.15s,box-shadow 0.15s;}
+.service-card:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.service-tag{display:inline-block;background:var(--sage);color:white;font-family:var(--font-body);font-size:10px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;padding:3px 9px;border-radius:4px;border:1.5px solid var(--ink);margin-bottom:1rem;}
+.service-card h3{font-family:var(--font-display);font-size:17px;color:var(--ink);margin-bottom:0.5rem;}
+.service-card p{font-size:14px;font-weight:600;color:var(--ink-muted);line-height:1.7;}
+
+.diff{background:var(--ink);border-top:var(--outline);border-bottom:var(--outline);}
+.diff .section-label{background:rgba(124,154,126,0.2);color:var(--sage-mid);border-color:var(--sage);}
+.diff .section-title{color:#ffffff}
+.diff .section-body{color:#888880;font-weight:600}
+
+.diff-item{padding:1.75rem;border:var(--outline);border-radius:10px;background:rgba(255,255,255,0.04);transition:background 0.2s;}
+.diff-item:hover{background:rgba(124,154,126,0.08)}
+.diff-number{font-family:var(--font-display);font-size:30px;color:var(--sage);line-height:1;margin-bottom:0.75rem;}
+.diff-label{font-size:14px;font-weight:800;color:#ffffff;margin-bottom:0.4rem;}
+.diff-desc{font-size:13px;font-weight:600;color:#555552;line-height:1.65;}
+
+.process{background:var(--sage-pale);border-top:var(--outline);border-bottom:var(--outline)}
+.process-steps{margin-top:2.5rem;display:flex;flex-direction:column;border:var(--outline);border-radius:10px;overflow:hidden;background:var(--surface);box-shadow:4px 4px 0 var(--ink);}
+.process-step{display:grid;grid-template-columns:60px 1fr;gap:1.25rem;padding:1.75rem;border-bottom:var(--outline-thin);align-items:start;transition:background 0.15s;}
+.process-step:last-child{border-bottom:none}
+.process-step:hover{background:var(--sage-pale)}
+.step-num{font-family:var(--font-display);font-size:15px;color:white;background:var(--sage-dark);width:40px;height:40px;border-radius:50%;border:var(--outline);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;box-shadow:2px 2px 0 var(--ink);}
+.step-content h3{font-family:var(--font-display);font-size:16px;color:var(--ink);margin-bottom:0.35rem;}
+.step-content p{font-size:14px;font-weight:600;color:var(--ink-muted);line-height:1.7;}
+
+.cta-section{background:var(--sage-dark);text-align:center;padding:5.5rem 2rem;border-top:var(--outline);}
+.cta-section h2{font-family:var(--font-display);font-size:clamp(1.8rem,3.2vw,2.4rem);color:white;margin-bottom:1rem;}
+.cta-section p{font-size:16px;font-weight:600;color:rgba(255,255,255,0.75);max-width:440px;margin:0 auto 2rem;line-height:1.75;}
+.cta-email{display:inline-block;background:white;color:var(--sage-dark);font-family:var(--font-body);font-weight:800;font-size:15px;padding:14px 32px;border-radius:6px;border:var(--outline);text-decoration:none;box-shadow:4px 4px 0 rgba(0,0,0,0.3);transition:transform 0.15s,box-shadow 0.15s;}
+.cta-email:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 rgba(0,0,0,0.3)}
+
+footer{background:var(--ink);padding:2rem;text-align:center;border-top:var(--outline);}
+footer p{font-size:13px;font-weight:700;color:#444440;}
+footer span{color:var(--sage)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">
+    <div class="logo-mark">M</div>
+    Max Brainerd <span>&nbsp;Labs</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact" class="nav-cta">Get in touch</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <svg class="hero-squiggle" width="340" height="340" viewBox="0 0 340 340" fill="none">
+    <circle cx="170" cy="170" r="168" stroke="white" stroke-width="2"/>
+    <circle cx="170" cy="170" r="120" stroke="white" stroke-width="2"/>
+    <circle cx="170" cy="170" r="72" stroke="white" stroke-width="2"/>
+  </svg>
+  <div class="container">
+    <p class="hero-eyebrow">Atlanta-based L&D consultant</p>
+    <h1>Training that actually <em>moves</em> your team forward.</h1>
+    <p class="hero-sub">Custom onboarding modules, procedure videos, and training content — built for growing Atlanta businesses that can't afford to keep starting from scratch.</p>
+    <a href="mailto:nick@maxbrainerd.com" class="hero-cta">Start a conversation →</a>
+  </div>
+</section>
+
+<section class="problem" id="about">
+  <div class="container">
+    <p class="section-label">The problem</p>
+    <h2 class="section-title">Sound familiar?</h2>
+    <p class="section-body">Most growing businesses don't have a training problem — they have a consistency problem. Every time someone new joins, a manager has to start over from scratch.</p>
+    <div class="grid-2x2">
+      <div class="pain-item">
+        <div class="pain-dash">✦</div>
+        <p class="pain-quote">We lose new hires in the first 60 days and I don't know why.</p>
+      </div>
+      <div class="pain-item">
+        <div class="pain-dash">✦</div>
+        <p class="pain-quote">Every manager trains people differently and it shows.</p>
+      </div>
+      <div class="pain-item">
+        <div class="pain-dash">✦</div>
+        <p class="pain-quote">Our onboarding is just someone shadowing someone else and hoping for the best.</p>
+      </div>
+      <div class="pain-item">
+        <div class="pain-dash">✦</div>
+        <p class="pain-quote">I can't keep pulling my best people off the floor every time we hire someone new.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <p class="section-label">What I do</p>
+    <h2 class="section-title">Training built for how your business actually runs.</h2>
+    <p class="section-body">Not off-the-shelf content. Not generic slide decks. Everything is built around your team, your processes, and your real workflow.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-tag">Onboarding</div>
+        <h3>Onboarding modules</h3>
+        <p>Interactive eLearning that gets new hires up to speed without pulling your best people off the floor to babysit them.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-tag">Video</div>
+        <h3>Procedure videos</h3>
+        <p>Short, clear videos documenting your processes — so the right way to do something lives in the system, not just in someone's head.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-tag">Reference</div>
+        <h3>Job aids & reference tools</h3>
+        <p>Quick-reference guides, checklists, and visual aids your team can use on the spot — no training session required.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-tag">Skills</div>
+        <h3>Skills & compliance training</h3>
+        <p>Role-specific training for customer service, operations standards, and compliance — whatever your team needs to perform consistently.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="diff">
+  <div class="container">
+    <p class="section-label">Why it's different</p>
+    <h2 class="section-title">Not a big agency. Not a freelance mill.</h2>
+    <p class="section-body">You get someone who understands both how people learn and how businesses actually operate — without enterprise pricing or a six-month timeline.</p>
+    <div class="grid-2x2">
+      <div class="diff-item">
+        <div class="diff-number">01</div>
+        <div class="diff-label">Outcome-first design</div>
+        <div class="diff-desc">Every module starts with what your team needs to do differently — not just what they need to know.</div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-number">02</div>
+        <div class="diff-label">Animation & video in-house</div>
+        <div class="diff-desc">Custom animated content and video production included — no subcontractors, no extra cost.</div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-number">03</div>
+        <div class="diff-label">Built for small teams</div>
+        <div class="diff-desc">Deliverables that work without an LMS, an IT department, or a dedicated training coordinator.</div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-number">04</div>
+        <div class="diff-label">Atlanta-based</div>
+        <div class="diff-desc">Local knowledge, face-to-face availability when it matters, no timezone friction.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="container">
+    <p class="section-label">How it works</p>
+    <h2 class="section-title">Simple from day one.</h2>
+    <p class="section-body">No lengthy discovery phases. No jargon. Just a clear process that gets you from problem to finished training content efficiently.</p>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Discovery call (30 min)</h3>
+          <p>We talk through your training gap — who needs to learn what, and what's gone wrong when they don't. No prep required on your end.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>Scope & proposal</h3>
+          <p>You get a plain-language proposal outlining exactly what I'll build, what format it'll be in, and what it costs. No surprises.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Build & review</h3>
+          <p>I build your content and share it for review. You give feedback, I revise. Most projects wrap in 1–3 weeks depending on scope.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h3>Delivery & handoff</h3>
+          <p>You get final files in whatever format works for your team — hosted link, downloadable file, or embedded in your existing tools.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="contact">
+  <h2>Ready to stop reinventing the wheel every time someone new starts?</h2>
+  <p>Send a quick email and we'll set up a free 30-minute call to talk through what you need.</p>
+  <a href="mailto:nick@maxbrainerd.com" class="cta-email">nick@maxbrainerd.com</a>
+</section>
+
+<footer>
+  <p>© 2026 <span>Max Brainerd Labs</span> · Atlanta, GA</p>
+</footer>
+
+</body>
+</html>
