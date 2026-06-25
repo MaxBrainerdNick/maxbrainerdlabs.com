@@ -34,12 +34,11 @@ nav{
   z-index:100;
   background:var(--surface);
   border-bottom:var(--outline);
-  padding:0 1.5rem;
+  padding:0 1.25rem;
   display:flex;
   align-items:center;
   justify-content:space-between;
   height:60px;
-  gap:1rem;
 }
 
 .nav-logo{
@@ -49,14 +48,14 @@ nav{
   text-decoration:none;
   display:flex;
   align-items:center;
-  gap:8px;
+  gap:7px;
   white-space:nowrap;
   flex-shrink:0;
 }
 
 .logo-mark{
-  width:32px;
-  height:32px;
+  width:30px;
+  height:30px;
   background:var(--sage);
   border:var(--outline);
   border-radius:7px;
@@ -64,7 +63,7 @@ nav{
   align-items:center;
   justify-content:center;
   color:white;
-  font-size:15px;
+  font-size:14px;
   font-family:var(--font-display);
   flex-shrink:0;
 }
@@ -73,7 +72,7 @@ nav{
 
 .nav-links{
   display:flex;
-  gap:1rem;
+  gap:0.75rem;
   list-style:none;
   align-items:center;
   flex-shrink:0;
@@ -94,14 +93,22 @@ nav{
 .nav-cta{
   background:var(--sage) !important;
   color:white !important;
-  padding:7px 14px;
+  padding:7px 12px !important;
   border-radius:6px;
   border:var(--outline) !important;
   font-weight:800 !important;
-  font-size:13px !important;
+  font-size:12px !important;
+  white-space:nowrap;
 }
 
 .nav-cta:hover{background:var(--sage-dark) !important}
+
+/* hide Services + Process on small screens, keep Get in touch */
+@media(max-width:480px){
+  .nav-hide-mobile{ display:none; }
+  .nav-logo{font-size:15px;gap:6px;}
+  .logo-mark{width:27px;height:27px;font-size:13px;}
+}
 
 /* HERO */
 .hero{background:var(--ink);padding:6.5rem 2rem 5.5rem;position:relative;overflow:hidden;border-bottom:var(--outline);}
@@ -122,6 +129,11 @@ section{padding:5rem 2rem}
 
 .grid-2x2{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:2.5rem;max-width:700px;}
 .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:2.5rem;max-width:700px;}
+
+@media(max-width:600px){
+  .grid-2x2{grid-template-columns:1fr;}
+  .services-grid{grid-template-columns:1fr;}
+}
 
 .problem{background:var(--sage-pale);border-top:var(--outline);border-bottom:var(--outline)}
 
@@ -165,18 +177,6 @@ section{padding:5rem 2rem}
 footer{background:var(--ink);padding:2rem;text-align:center;border-top:var(--outline);}
 footer p{font-size:13px;font-weight:700;color:#444440;}
 footer span{color:var(--sage)}
-
-/* MOBILE */
-@media(max-width:600px){
-  nav{padding:0 1rem;height:56px;}
-  .nav-logo{font-size:16px;gap:6px;}
-  .logo-mark{width:28px;height:28px;font-size:13px;}
-  .nav-links{gap:0.6rem;}
-  .nav-links a{font-size:12px;}
-  .nav-cta{padding:6px 10px;font-size:11px !important;}
-  .grid-2x2{grid-template-columns:1fr;}
-  .services-grid{grid-template-columns:1fr;}
-}
 </style>
 </head>
 <body>
@@ -184,11 +184,11 @@ footer span{color:var(--sage)}
 <nav>
   <a class="nav-logo" href="#">
     <div class="logo-mark">M</div>
-    Max Brainerd <span>&nbsp;Labs</span>
+    Max Brainerd<span>Labs</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#process">Process</a></li>
+    <li class="nav-hide-mobile"><a href="#services">Services</a></li>
+    <li class="nav-hide-mobile"><a href="#process">Process</a></li>
     <li><a href="#contact" class="nav-cta">Get in touch</a></li>
   </ul>
 </nav>
