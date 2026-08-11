@@ -58,8 +58,11 @@ section{padding:5rem 2rem;position:relative;overflow:hidden;}
 .work .section-label{background:rgba(124,154,126,0.2);color:var(--sage-mid);border-color:var(--sage);}
 .work .section-title{color:#ffffff;}
 .carousel-track-wrap{overflow:hidden;margin-top:2.5rem;}
-.carousel-track{display:flex;gap:1.25rem;transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);}
-.carousel-card{flex:0 0 calc((100% - 2.5rem) / 3);border:var(--outline);border-radius:10px;overflow:hidden;background:#2a2a28;box-shadow:4px 4px 0 rgba(255,255,255,0.08);cursor:pointer;display:block;text-decoration:none;}
+.carousel-track{display:flex;gap:1.25rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:2px;}
+.carousel-track::-webkit-scrollbar{display:none;}
+.carousel-card{flex:0 0 calc((100% - 2.5rem) / 3);scroll-snap-align:start;border:var(--outline);border-radius:10px;overflow:hidden;background:#2a2a28;box-shadow:4px 4px 0 rgba(255,255,255,0.08);cursor:pointer;display:block;text-decoration:none;}
+@media(max-width:900px){.carousel-card{flex:0 0 calc((100% - 1.25rem) / 2);}}
+@media(max-width:600px){.carousel-card{flex:0 0 88%;}.carousel-controls{display:none;}}
 .carousel-card:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 rgba(255,255,255,0.12);}
 .carousel-thumb{position:relative;width:100%;padding-top:56.25%;overflow:hidden;background:#2a2a28;}
 .carousel-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
@@ -336,30 +339,25 @@ document.getElementById('lightboxClose').addEventListener('click', closeLightbox
 document.getElementById('lightbox').addEventListener('click', function(e){ if(e.target===this) closeLightbox(); });
 document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeLightbox(); });
 
-var current = 0;
-var total = 5;
-var visible = 3;
-
-function getCardWidth(){
-  var wrap = document.getElementById('carouselTrack').parentElement;
-  return (wrap.offsetWidth - 20 * (visible - 1)) / visible;
+var track = document.getElementById('carouselTrack');
+function cardStep(){
+  var card = track.querySelector('.carousel-card');
+  if(!card) return track.clientWidth;
+  var style = getComputedStyle(track);
+  var gap = parseFloat(style.columnGap || style.gap || 0);
+  return card.getBoundingClientRect().width + gap;
 }
-
-function updateTrack(){
-  var track = document.getElementById('carouselTrack');
-  var offset = current * (getCardWidth() + 20);
-  track.style.transform = 'translateX(-' + offset + 'px)';
-  document.getElementById('btnPrev').classList.toggle('hidden', current === 0);
-  document.getElementById('btnNext').classList.toggle('hidden', current >= total - visible);
+function updateArrows(){
+  var maxScroll = track.scrollWidth - track.clientWidth - 1;
+  document.getElementById('btnPrev').classList.toggle('hidden', track.scrollLeft <= 0);
+  document.getElementById('btnNext').classList.toggle('hidden', track.scrollLeft >= maxScroll);
 }
-
 function moveCarousel(dir){
-  current = Math.max(0, Math.min(total - visible, current + dir));
-  updateTrack();
+  track.scrollBy({ left: dir * cardStep(), behavior: 'smooth' });
 }
-
-window.addEventListener('resize', updateTrack);
-updateTrack();
+track.addEventListener('scroll', updateArrows);
+window.addEventListener('resize', updateArrows);
+updateArrows();
 </script>
 </body>
 </html>
