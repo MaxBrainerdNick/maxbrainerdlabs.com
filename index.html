@@ -44,7 +44,10 @@ section{padding:5rem 2rem;position:relative;overflow:hidden;}
 .grid-2x2{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:2.5rem;max-width:700px;}
 .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:2.5rem;max-width:700px;}
 @media(max-width:600px){.grid-2x2{grid-template-columns:1fr}.services-grid{grid-template-columns:1fr}}
-.problem{background:var(--sage-pale);border-top:var(--outline);border-bottom:var(--outline);}
+.problem{background:var(--ink);border-top:var(--outline);border-bottom:var(--outline);}
+.problem .section-label{background:rgba(124,154,126,0.2);color:var(--sage-mid);border-color:var(--sage);}
+.problem .section-title{color:#ffffff;}
+.problem .section-body{color:#9A9A94;}
 .pain-item{background:var(--surface);border:var(--outline);border-radius:10px;padding:1.75rem;box-shadow:4px 4px 0 var(--ink);transition:transform 0.15s,box-shadow 0.15s;}
 .pain-item:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
 .pain-dash{font-size:22px;color:var(--sage);line-height:1;margin-bottom:0.75rem;}
@@ -54,16 +57,14 @@ section{padding:5rem 2rem;position:relative;overflow:hidden;}
 .service-tag{display:inline-block;background:var(--sage);color:white;font-family:var(--font-body);font-size:10px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;padding:3px 9px;border-radius:4px;border:1.5px solid var(--ink);margin-bottom:1rem;}
 .service-card h3{font-family:var(--font-display);font-size:17px;color:var(--ink);margin-bottom:0.5rem;}
 .service-card p{font-size:14px;font-weight:600;color:var(--ink-muted);line-height:1.7;}
-.work{background:var(--ink);border-top:var(--outline);border-bottom:var(--outline);}
-.work .section-label{background:rgba(124,154,126,0.2);color:var(--sage-mid);border-color:var(--sage);}
-.work .section-title{color:#ffffff;}
+.work{background:var(--surface);border-top:var(--outline);border-bottom:var(--outline);}
 .carousel-track-wrap{overflow:hidden;margin-top:2.5rem;}
 .carousel-track{display:flex;gap:1.25rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:2px;}
 .carousel-track::-webkit-scrollbar{display:none;}
-.carousel-card{flex:0 0 calc((100% - 2.5rem) / 3);scroll-snap-align:start;border:var(--outline);border-radius:10px;overflow:hidden;background:#2a2a28;box-shadow:4px 4px 0 rgba(255,255,255,0.08);cursor:pointer;display:block;text-decoration:none;}
+.carousel-card{flex:0 0 calc((100% - 2.5rem) / 3);scroll-snap-align:start;border:var(--outline);border-radius:10px;overflow:hidden;background:#2a2a28;box-shadow:4px 4px 0 var(--ink);cursor:pointer;display:block;text-decoration:none;}
 @media(max-width:900px){.carousel-card{flex:0 0 calc((100% - 1.25rem) / 2);}}
 @media(max-width:600px){.carousel-card{flex:0 0 88%;}.carousel-controls{display:none;}}
-.carousel-card:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 rgba(255,255,255,0.12);}
+.carousel-card:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink);}
 .carousel-thumb{position:relative;width:100%;padding-top:56.25%;overflow:hidden;background:#2a2a28;}
 .carousel-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
 .thumb-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#2e3d2f,#1a2a1b);}
@@ -93,8 +94,11 @@ section{padding:5rem 2rem;position:relative;overflow:hidden;}
 .diff-number{font-family:var(--font-display);font-size:30px;color:var(--sage);line-height:1;margin-bottom:0.75rem;}
 .diff-label{font-size:14px;font-weight:800;color:#ffffff;margin-bottom:0.4rem;}
 .diff-desc{font-size:13px;font-weight:600;color:#555552;line-height:1.65;}
-.process{background:var(--sage-pale);border-top:var(--outline);border-bottom:var(--outline);}
-.process-steps{margin-top:2.5rem;display:flex;flex-direction:column;border:var(--outline);border-radius:10px;overflow:hidden;background:var(--surface);box-shadow:4px 4px 0 var(--ink);}
+.process{background:var(--ink);border-top:var(--outline);border-bottom:var(--outline);}
+.process .section-label{background:rgba(124,154,126,0.2);color:var(--sage-mid);border-color:var(--sage);}
+.process .section-title{color:#ffffff;}
+.process .section-body{color:#9A9A94;}
+.process-steps{margin-top:2.5rem;display:flex;flex-direction:column;border:var(--outline);border-radius:10px;overflow:hidden;background:var(--surface);box-shadow:4px 4px 0 rgba(255,255,255,0.15);}
 .process-step{display:grid;grid-template-columns:60px 1fr;gap:1.25rem;padding:1.75rem;border-bottom:var(--outline-thin);align-items:start;transition:background 0.15s;}
 .process-step:last-child{border-bottom:none}
 .process-step:hover{background:var(--sage-pale)}
@@ -139,43 +143,6 @@ footer span{color:var(--sage)}
     <a href="mailto:nick@maxbrainerd.com" class="hero-cta">Start a conversation &#8594;</a>
   </div>
 </section>
-
-<section class="problem" id="about">
-<svg class="sp" style="top:18px;right:60px;width:160px;opacity:0.08;transform:rotate(12deg)" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg"><path d="M100,20 C108,4 122,-2 118,14 C130,2 148,8 138,22 C152,12 162,22 154,34 C170,26 176,42 162,46 C178,46 180,62 164,62 C178,70 174,86 158,80 C166,94 156,106 144,96 C146,112 132,118 124,104 C120,120 106,122 102,106 C96,122 80,120 78,104 C68,116 54,110 60,96 C46,106 36,94 46,82 C30,86 26,70 42,66 C26,62 26,46 44,46 C28,42 30,26 46,32 C38,18 50,8 62,20 C60,4 76,-2 82,14 C86,2 100,4 100,20Z" fill="#7C9A7E"/><circle cx="168" cy="20" r="9" fill="#7C9A7E"/><circle cx="180" cy="36" r="5" fill="#7C9A7E"/><circle cx="174" cy="10" r="4" fill="#7C9A7E"/><circle cx="186" cy="50" r="3" fill="#7C9A7E"/><circle cx="22" cy="50" r="6" fill="#7C9A7E"/><circle cx="12" cy="38" r="3" fill="#7C9A7E"/><circle cx="16" cy="64" r="4" fill="#7C9A7E"/></svg>
-<svg class="sp" style="top:120px;left:15px;width:100px;opacity:0.07;transform:rotate(-28deg)" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg"><path d="M100,20 C108,4 122,-2 118,14 C130,2 148,8 138,22 C152,12 162,22 154,34 C170,26 176,42 162,46 C178,46 180,62 164,62 C178,70 174,86 158,80 C166,94 156,106 144,96 C146,112 132,118 124,104 C120,120 106,122 102,106 C96,122 80,120 78,104 C68,116 54,110 60,96 C46,106 36,94 46,82 C30,86 26,70 42,66 C26,62 26,46 44,46 C28,42 30,26 46,32 C38,18 50,8 62,20 C60,4 76,-2 82,14 C86,2 100,4 100,20Z" fill="#4A6B4C"/><circle cx="168" cy="20" r="8" fill="#4A6B4C"/><circle cx="178" cy="34" r="4" fill="#4A6B4C"/><circle cx="22" cy="50" r="5" fill="#4A6B4C"/><circle cx="14" cy="36" r="3" fill="#4A6B4C"/></svg>
-<svg class="sp" style="top:55%;right:200px;width:65px;opacity:0.06;transform:rotate(60deg)" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg"><path d="M100,20 C108,4 122,-2 118,14 C130,2 148,8 138,22 C152,12 162,22 154,34 C170,26 176,42 162,46 C178,46 180,62 164,62 C178,70 174,86 158,80 C166,94 156,106 144,96 C146,112 132,118 124,104 C120,120 106,122 102,106 C96,122 80,120 78,104 C68,116 54,110 60,96 C46,106 36,94 46,82 C30,86 26,70 42,66 C26,62 26,46 44,46 C28,42 30,26 46,32 C38,18 50,8 62,20 C60,4 76,-2 82,14 C86,2 100,4 100,20Z" fill="#7C9A7E"/><circle cx="168" cy="20" r="7" fill="#7C9A7E"/><circle cx="22" cy="50" r="5" fill="#7C9A7E"/></svg>
-<svg class="sp" style="bottom:30px;left:38%;width:45px;opacity:0.07;transform:rotate(-15deg)" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg"><path d="M100,20 C108,4 122,-2 118,14 C130,2 148,8 138,22 C152,12 162,22 154,34 C170,26 176,42 162,46 C178,46 180,62 164,62 C178,70 174,86 158,80 C166,94 156,106 144,96 C146,112 132,118 124,104 C120,120 106,122 102,106 C96,122 80,120 78,104 C68,116 54,110 60,96 C46,106 36,94 46,82 C30,86 26,70 42,66 C26,62 26,46 44,46 C28,42 30,26 46,32 C38,18 50,8 62,20 C60,4 76,-2 82,14 C86,2 100,4 100,20Z" fill="#7C9A7E"/><circle cx="168" cy="20" r="6" fill="#7C9A7E"/></svg>
-  <div class="container">
-    <p class="section-label">The problem</p>
-    <h2 class="section-title">Sound familiar?</h2>
-    <p class="section-body">Most growing businesses don&#8217;t have a training problem &#8212; they have a consistency problem. Every time someone new joins, a manager has to start over from scratch.</p>
-    <div class="grid-2x2">
-      <div class="pain-item"><div class="pain-dash">&#10022;</div><p class="pain-quote">We lose new hires in the first 60 days and I don&#8217;t know why.</p></div>
-      <div class="pain-item"><div class="pain-dash">&#10022;</div><p class="pain-quote">Every manager trains people differently and it shows.</p></div>
-      <div class="pain-item"><div class="pain-dash">&#10022;</div><p class="pain-quote">Our onboarding is just someone shadowing someone else and hoping for the best.</p></div>
-      <div class="pain-item"><div class="pain-dash">&#10022;</div><p class="pain-quote">I can&#8217;t keep pulling my best people off the floor every time we hire someone new.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="services">
-<svg class="sp" style="top:-10px;right:140px;width:130px;opacity:0.06;transform:rotate(38deg)" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg"><path d="M100,20 C108,4 122,-2 118,14 C130,2 148,8 138,22 C152,12 162,22 154,34 C170,26 176,42 162,46 C178,46 180,62 164,62 C178,70 174,86 158,80 C166,94 156,106 144,96 C146,112 132,118 124,104 C120,120 106,122 102,106 C96,122 80,120 78,104 C68,116 54,110 60,96 C46,106 36,94 46,82 C30,86 26,70 42,66 C26,62 26,46 44,46 C28,42 30,26 46,32 C38,18 50,8 62,20 C60,4 76,-2 82,14 C86,2 100,4 100,20Z" fill="#7C9A7E"/><circle cx="168" cy="20" r="9" fill="#7C9A7E"/><circle cx="180" cy="36" r="5" fill="#7C9A7E"/><circle cx="174" cy="8" r="4" fill="#7C9A7E"/><circle cx="22" cy="50" r="6" fill="#7C9A7E"/><circle cx="12" cy="36" r="3" fill="#7C9A7E"/></svg>
-<svg class="sp" style="top:40%;left:20px;width:90px;opacity:0.07;transform:rotate(-52deg)" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg"><path d="M100,20 C108,4 122,-2 118,14 C130,2 148,8 138,22 C152,12 162,22 154,34 C170,26 176,42 162,46 C178,46 180,62 164,62 C178,70 174,86 158,80 C166,94 156,106 144,96 C146,112 132,118 124,104 C120,120 106,122 102,106 C96,122 80,120 78,104 C68,116 54,110 60,96 C46,106 36,94 46,82 C30,86 26,70 42,66 C26,62 26,46 44,46 C28,42 30,26 46,32 C38,18 50,8 62,20 C60,4 76,-2 82,14 C86,2 100,4 100,20Z" fill="#4A6B4C"/><circle cx="168" cy="20" r="8" fill="#4A6B4C"/><circle cx="22" cy="50" r="5" fill="#4A6B4C"/><circle cx="14" cy="64" r="3" fill="#4A6B4C"/></svg>
-<svg class="sp" style="bottom:40px;right:80px;width:55px;opacity:0.06;transform:rotate(77deg)" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg"><path d="M100,20 C108,4 122,-2 118,14 C130,2 148,8 138,22 C152,12 162,22 154,34 C170,26 176,42 162,46 C178,46 180,62 164,62 C178,70 174,86 158,80 C166,94 156,106 144,96 C146,112 132,118 124,104 C120,120 106,122 102,106 C96,122 80,120 78,104 C68,116 54,110 60,96 C46,106 36,94 46,82 C30,86 26,70 42,66 C26,62 26,46 44,46 C28,42 30,26 46,32 C38,18 50,8 62,20 C60,4 76,-2 82,14 C86,2 100,4 100,20Z" fill="#7C9A7E"/><circle cx="168" cy="20" r="6" fill="#7C9A7E"/><circle cx="22" cy="50" r="4" fill="#7C9A7E"/></svg>
-<svg class="sp" style="top:25%;left:55%;width:40px;opacity:0.05;transform:rotate(110deg)" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg"><path d="M100,20 C108,4 122,-2 118,14 C130,2 148,8 138,22 C152,12 162,22 154,34 C170,26 176,42 162,46 C178,46 180,62 164,62 C178,70 174,86 158,80 C166,94 156,106 144,96 C146,112 132,118 124,104 C120,120 106,122 102,106 C96,122 80,120 78,104 C68,116 54,110 60,96 C46,106 36,94 46,82 C30,86 26,70 42,66 C26,62 26,46 44,46 C28,42 30,26 46,32 C38,18 50,8 62,20 C60,4 76,-2 82,14 C86,2 100,4 100,20Z" fill="#7C9A7E"/></svg>
-  <div class="container">
-    <p class="section-label">What I do</p>
-    <h2 class="section-title">Training built for how your business actually runs.</h2>
-    <p class="section-body">Not off-the-shelf content. Not generic slide decks. Everything is built around your team, your processes, and your real workflow.</p>
-    <div class="services-grid">
-      <div class="service-card"><div class="service-tag">Onboarding</div><h3>Onboarding modules</h3><p>Interactive eLearning that gets new hires up to speed without pulling your best people off the floor to babysit them.</p></div>
-      <div class="service-card"><div class="service-tag">Video</div><h3>Procedure videos</h3><p>Short, clear videos documenting your processes &#8212; so the right way to do something lives in the system, not just in someone&#8217;s head.</p></div>
-      <div class="service-card"><div class="service-tag">Reference</div><h3>Job aids &amp; reference tools</h3><p>Quick-reference guides, checklists, and visual aids your team can use on the spot &#8212; no training session required.</p></div>
-      <div class="service-card"><div class="service-tag">Skills</div><h3>Skills &amp; compliance training</h3><p>Role-specific training for customer service, operations standards, and compliance &#8212; whatever your team needs to perform consistently.</p></div>
-    </div>
-  </div>
-</section>
-
 <section class="work" id="work">
 <svg class="sp" style="top:20px;right:80px;width:110px;opacity:0.10;transform:rotate(22deg)" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg"><path d="M100,20 C108,4 122,-2 118,14 C130,2 148,8 138,22 C152,12 162,22 154,34 C170,26 176,42 162,46 C178,46 180,62 164,62 C178,70 174,86 158,80 C166,94 156,106 144,96 C146,112 132,118 124,104 C120,120 106,122 102,106 C96,122 80,120 78,104 C68,116 54,110 60,96 C46,106 36,94 46,82 C30,86 26,70 42,66 C26,62 26,46 44,46 C28,42 30,26 46,32 C38,18 50,8 62,20 C60,4 76,-2 82,14 C86,2 100,4 100,20Z" fill="#7C9A7E"/><circle cx="168" cy="20" r="8" fill="#7C9A7E"/><circle cx="180" cy="34" r="4" fill="#7C9A7E"/><circle cx="22" cy="50" r="5" fill="#7C9A7E"/></svg>
 <svg class="sp" style="bottom:30px;left:40px;width:75px;opacity:0.08;transform:rotate(-45deg)" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg"><path d="M100,20 C108,4 122,-2 118,14 C130,2 148,8 138,22 C152,12 162,22 154,34 C170,26 176,42 162,46 C178,46 180,62 164,62 C178,70 174,86 158,80 C166,94 156,106 144,96 C146,112 132,118 124,104 C120,120 106,122 102,106 C96,122 80,120 78,104 C68,116 54,110 60,96 C46,106 36,94 46,82 C30,86 26,70 42,66 C26,62 26,46 44,46 C28,42 30,26 46,32 C38,18 50,8 62,20 C60,4 76,-2 82,14 C86,2 100,4 100,20Z" fill="#7C9A7E"/><circle cx="168" cy="20" r="7" fill="#7C9A7E"/><circle cx="22" cy="50" r="4" fill="#7C9A7E"/></svg>
@@ -235,25 +202,40 @@ footer span{color:var(--sage)}
     </div>
   </div>
 </section>
-
-<section class="diff">
-<svg class="sp" style="top:10px;left:80px;width:140px;opacity:0.11;transform:rotate(-33deg)" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg"><path d="M100,20 C108,4 122,-2 118,14 C130,2 148,8 138,22 C152,12 162,22 154,34 C170,26 176,42 162,46 C178,46 180,62 164,62 C178,70 174,86 158,80 C166,94 156,106 144,96 C146,112 132,118 124,104 C120,120 106,122 102,106 C96,122 80,120 78,104 C68,116 54,110 60,96 C46,106 36,94 46,82 C30,86 26,70 42,66 C26,62 26,46 44,46 C28,42 30,26 46,32 C38,18 50,8 62,20 C60,4 76,-2 82,14 C86,2 100,4 100,20Z" fill="#7C9A7E"/><circle cx="168" cy="20" r="10" fill="#7C9A7E"/><circle cx="182" cy="38" r="6" fill="#7C9A7E"/><circle cx="176" cy="8" r="4" fill="#7C9A7E"/><circle cx="190" cy="52" r="3" fill="#7C9A7E"/><circle cx="22" cy="50" r="7" fill="#7C9A7E"/><circle cx="10" cy="36" r="4" fill="#7C9A7E"/><circle cx="14" cy="66" r="3" fill="#7C9A7E"/></svg>
-<svg class="sp" style="top:50%;right:30px;width:95px;opacity:0.08;transform:rotate(44deg)" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg"><path d="M100,20 C108,4 122,-2 118,14 C130,2 148,8 138,22 C152,12 162,22 154,34 C170,26 176,42 162,46 C178,46 180,62 164,62 C178,70 174,86 158,80 C166,94 156,106 144,96 C146,112 132,118 124,104 C120,120 106,122 102,106 C96,122 80,120 78,104 C68,116 54,110 60,96 C46,106 36,94 46,82 C30,86 26,70 42,66 C26,62 26,46 44,46 C28,42 30,26 46,32 C38,18 50,8 62,20 C60,4 76,-2 82,14 C86,2 100,4 100,20Z" fill="#7C9A7E"/><circle cx="168" cy="20" r="8" fill="#7C9A7E"/><circle cx="180" cy="34" r="4" fill="#7C9A7E"/><circle cx="22" cy="50" r="5" fill="#7C9A7E"/></svg>
-<svg class="sp" style="bottom:20px;left:42%;width:60px;opacity:0.09;transform:rotate(-70deg)" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg"><path d="M100,20 C108,4 122,-2 118,14 C130,2 148,8 138,22 C152,12 162,22 154,34 C170,26 176,42 162,46 C178,46 180,62 164,62 C178,70 174,86 158,80 C166,94 156,106 144,96 C146,112 132,118 124,104 C120,120 106,122 102,106 C96,122 80,120 78,104 C68,116 54,110 60,96 C46,106 36,94 46,82 C30,86 26,70 42,66 C26,62 26,46 44,46 C28,42 30,26 46,32 C38,18 50,8 62,20 C60,4 76,-2 82,14 C86,2 100,4 100,20Z" fill="#7C9A7E"/><circle cx="168" cy="20" r="7" fill="#7C9A7E"/><circle cx="22" cy="50" r="5" fill="#7C9A7E"/></svg>
-<svg class="sp" style="top:30px;right:220px;width:42px;opacity:0.07;transform:rotate(20deg)" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg"><path d="M100,20 C108,4 122,-2 118,14 C130,2 148,8 138,22 C152,12 162,22 154,34 C170,26 176,42 162,46 C178,46 180,62 164,62 C178,70 174,86 158,80 C166,94 156,106 144,96 C146,112 132,118 124,104 C120,120 106,122 102,106 C96,122 80,120 78,104 C68,116 54,110 60,96 C46,106 36,94 46,82 C30,86 26,70 42,66 C26,62 26,46 44,46 C28,42 30,26 46,32 C38,18 50,8 62,20 C60,4 76,-2 82,14 C86,2 100,4 100,20Z" fill="#7C9A7E"/></svg>
+<section class="problem" id="about">
+<svg class="sp" style="top:18px;right:60px;width:160px;opacity:0.08;transform:rotate(12deg)" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg"><path d="M100,20 C108,4 122,-2 118,14 C130,2 148,8 138,22 C152,12 162,22 154,34 C170,26 176,42 162,46 C178,46 180,62 164,62 C178,70 174,86 158,80 C166,94 156,106 144,96 C146,112 132,118 124,104 C120,120 106,122 102,106 C96,122 80,120 78,104 C68,116 54,110 60,96 C46,106 36,94 46,82 C30,86 26,70 42,66 C26,62 26,46 44,46 C28,42 30,26 46,32 C38,18 50,8 62,20 C60,4 76,-2 82,14 C86,2 100,4 100,20Z" fill="#7C9A7E"/><circle cx="168" cy="20" r="9" fill="#7C9A7E"/><circle cx="180" cy="36" r="5" fill="#7C9A7E"/><circle cx="174" cy="10" r="4" fill="#7C9A7E"/><circle cx="186" cy="50" r="3" fill="#7C9A7E"/><circle cx="22" cy="50" r="6" fill="#7C9A7E"/><circle cx="12" cy="38" r="3" fill="#7C9A7E"/><circle cx="16" cy="64" r="4" fill="#7C9A7E"/></svg>
+<svg class="sp" style="top:120px;left:15px;width:100px;opacity:0.07;transform:rotate(-28deg)" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg"><path d="M100,20 C108,4 122,-2 118,14 C130,2 148,8 138,22 C152,12 162,22 154,34 C170,26 176,42 162,46 C178,46 180,62 164,62 C178,70 174,86 158,80 C166,94 156,106 144,96 C146,112 132,118 124,104 C120,120 106,122 102,106 C96,122 80,120 78,104 C68,116 54,110 60,96 C46,106 36,94 46,82 C30,86 26,70 42,66 C26,62 26,46 44,46 C28,42 30,26 46,32 C38,18 50,8 62,20 C60,4 76,-2 82,14 C86,2 100,4 100,20Z" fill="#4A6B4C"/><circle cx="168" cy="20" r="8" fill="#4A6B4C"/><circle cx="178" cy="34" r="4" fill="#4A6B4C"/><circle cx="22" cy="50" r="5" fill="#4A6B4C"/><circle cx="14" cy="36" r="3" fill="#4A6B4C"/></svg>
+<svg class="sp" style="top:55%;right:200px;width:65px;opacity:0.06;transform:rotate(60deg)" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg"><path d="M100,20 C108,4 122,-2 118,14 C130,2 148,8 138,22 C152,12 162,22 154,34 C170,26 176,42 162,46 C178,46 180,62 164,62 C178,70 174,86 158,80 C166,94 156,106 144,96 C146,112 132,118 124,104 C120,120 106,122 102,106 C96,122 80,120 78,104 C68,116 54,110 60,96 C46,106 36,94 46,82 C30,86 26,70 42,66 C26,62 26,46 44,46 C28,42 30,26 46,32 C38,18 50,8 62,20 C60,4 76,-2 82,14 C86,2 100,4 100,20Z" fill="#7C9A7E"/><circle cx="168" cy="20" r="7" fill="#7C9A7E"/><circle cx="22" cy="50" r="5" fill="#7C9A7E"/></svg>
+<svg class="sp" style="bottom:30px;left:38%;width:45px;opacity:0.07;transform:rotate(-15deg)" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg"><path d="M100,20 C108,4 122,-2 118,14 C130,2 148,8 138,22 C152,12 162,22 154,34 C170,26 176,42 162,46 C178,46 180,62 164,62 C178,70 174,86 158,80 C166,94 156,106 144,96 C146,112 132,118 124,104 C120,120 106,122 102,106 C96,122 80,120 78,104 C68,116 54,110 60,96 C46,106 36,94 46,82 C30,86 26,70 42,66 C26,62 26,46 44,46 C28,42 30,26 46,32 C38,18 50,8 62,20 C60,4 76,-2 82,14 C86,2 100,4 100,20Z" fill="#7C9A7E"/><circle cx="168" cy="20" r="6" fill="#7C9A7E"/></svg>
   <div class="container">
-    <p class="section-label">Why it&#8217;s different</p>
-    <h2 class="section-title">Not a big agency. Not a freelance mill.</h2>
-    <p class="section-body">You get someone who understands both how people learn and how businesses actually operate &#8212; without enterprise pricing or a six-month timeline.</p>
+    <p class="section-label">The problem</p>
+    <h2 class="section-title">Sound familiar?</h2>
+    <p class="section-body">Most growing businesses don&#8217;t have a training problem &#8212; they have a consistency problem. Every time someone new joins, a manager has to start over from scratch.</p>
     <div class="grid-2x2">
-      <div class="diff-item"><div class="diff-number">01</div><div class="diff-label">Outcome-first design</div><div class="diff-desc">Every module starts with what your team needs to do differently &#8212; not just what they need to know.</div></div>
-      <div class="diff-item"><div class="diff-number">02</div><div class="diff-label">Animation &amp; video in-house</div><div class="diff-desc">Custom animated content and video production included &#8212; no subcontractors, no extra cost.</div></div>
-      <div class="diff-item"><div class="diff-number">03</div><div class="diff-label">Built for small teams</div><div class="diff-desc">Deliverables that work without an LMS, an IT department, or a dedicated training coordinator.</div></div>
-      <div class="diff-item"><div class="diff-number">04</div><div class="diff-label">Atlanta-based</div><div class="diff-desc">Local knowledge, face-to-face availability when it matters, no timezone friction.</div></div>
+      <div class="pain-item"><div class="pain-dash">&#10022;</div><p class="pain-quote">We lose new hires in the first 60 days and I don&#8217;t know why.</p></div>
+      <div class="pain-item"><div class="pain-dash">&#10022;</div><p class="pain-quote">Every manager trains people differently and it shows.</p></div>
+      <div class="pain-item"><div class="pain-dash">&#10022;</div><p class="pain-quote">Our onboarding is just someone shadowing someone else and hoping for the best.</p></div>
+      <div class="pain-item"><div class="pain-dash">&#10022;</div><p class="pain-quote">I can&#8217;t keep pulling my best people off the floor every time we hire someone new.</p></div>
     </div>
   </div>
 </section>
-
+<section id="services">
+<svg class="sp" style="top:-10px;right:140px;width:130px;opacity:0.06;transform:rotate(38deg)" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg"><path d="M100,20 C108,4 122,-2 118,14 C130,2 148,8 138,22 C152,12 162,22 154,34 C170,26 176,42 162,46 C178,46 180,62 164,62 C178,70 174,86 158,80 C166,94 156,106 144,96 C146,112 132,118 124,104 C120,120 106,122 102,106 C96,122 80,120 78,104 C68,116 54,110 60,96 C46,106 36,94 46,82 C30,86 26,70 42,66 C26,62 26,46 44,46 C28,42 30,26 46,32 C38,18 50,8 62,20 C60,4 76,-2 82,14 C86,2 100,4 100,20Z" fill="#7C9A7E"/><circle cx="168" cy="20" r="9" fill="#7C9A7E"/><circle cx="180" cy="36" r="5" fill="#7C9A7E"/><circle cx="174" cy="8" r="4" fill="#7C9A7E"/><circle cx="22" cy="50" r="6" fill="#7C9A7E"/><circle cx="12" cy="36" r="3" fill="#7C9A7E"/></svg>
+<svg class="sp" style="top:40%;left:20px;width:90px;opacity:0.07;transform:rotate(-52deg)" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg"><path d="M100,20 C108,4 122,-2 118,14 C130,2 148,8 138,22 C152,12 162,22 154,34 C170,26 176,42 162,46 C178,46 180,62 164,62 C178,70 174,86 158,80 C166,94 156,106 144,96 C146,112 132,118 124,104 C120,120 106,122 102,106 C96,122 80,120 78,104 C68,116 54,110 60,96 C46,106 36,94 46,82 C30,86 26,70 42,66 C26,62 26,46 44,46 C28,42 30,26 46,32 C38,18 50,8 62,20 C60,4 76,-2 82,14 C86,2 100,4 100,20Z" fill="#4A6B4C"/><circle cx="168" cy="20" r="8" fill="#4A6B4C"/><circle cx="22" cy="50" r="5" fill="#4A6B4C"/><circle cx="14" cy="64" r="3" fill="#4A6B4C"/></svg>
+<svg class="sp" style="bottom:40px;right:80px;width:55px;opacity:0.06;transform:rotate(77deg)" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg"><path d="M100,20 C108,4 122,-2 118,14 C130,2 148,8 138,22 C152,12 162,22 154,34 C170,26 176,42 162,46 C178,46 180,62 164,62 C178,70 174,86 158,80 C166,94 156,106 144,96 C146,112 132,118 124,104 C120,120 106,122 102,106 C96,122 80,120 78,104 C68,116 54,110 60,96 C46,106 36,94 46,82 C30,86 26,70 42,66 C26,62 26,46 44,46 C28,42 30,26 46,32 C38,18 50,8 62,20 C60,4 76,-2 82,14 C86,2 100,4 100,20Z" fill="#7C9A7E"/><circle cx="168" cy="20" r="6" fill="#7C9A7E"/><circle cx="22" cy="50" r="4" fill="#7C9A7E"/></svg>
+<svg class="sp" style="top:25%;left:55%;width:40px;opacity:0.05;transform:rotate(110deg)" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg"><path d="M100,20 C108,4 122,-2 118,14 C130,2 148,8 138,22 C152,12 162,22 154,34 C170,26 176,42 162,46 C178,46 180,62 164,62 C178,70 174,86 158,80 C166,94 156,106 144,96 C146,112 132,118 124,104 C120,120 106,122 102,106 C96,122 80,120 78,104 C68,116 54,110 60,96 C46,106 36,94 46,82 C30,86 26,70 42,66 C26,62 26,46 44,46 C28,42 30,26 46,32 C38,18 50,8 62,20 C60,4 76,-2 82,14 C86,2 100,4 100,20Z" fill="#7C9A7E"/></svg>
+  <div class="container">
+    <p class="section-label">What I do</p>
+    <h2 class="section-title">Training built for how your business actually runs.</h2>
+    <p class="section-body">Not off-the-shelf content. Not generic slide decks. Everything is built around your team, your processes, and your real workflow.</p>
+    <div class="services-grid">
+      <div class="service-card"><div class="service-tag">Onboarding</div><h3>Onboarding modules</h3><p>Interactive eLearning that gets new hires up to speed without pulling your best people off the floor to babysit them.</p></div>
+      <div class="service-card"><div class="service-tag">Video</div><h3>Procedure videos</h3><p>Short, clear videos documenting your processes &#8212; so the right way to do something lives in the system, not just in someone&#8217;s head.</p></div>
+      <div class="service-card"><div class="service-tag">Reference</div><h3>Job aids &amp; reference tools</h3><p>Quick-reference guides, checklists, and visual aids your team can use on the spot &#8212; no training session required.</p></div>
+      <div class="service-card"><div class="service-tag">Skills</div><h3>Skills &amp; compliance training</h3><p>Role-specific training for customer service, operations standards, and compliance &#8212; whatever your team needs to perform consistently.</p></div>
+    </div>
+  </div>
+</section>
 <section class="process" id="process">
 <svg class="sp" style="top:25px;left:50px;width:105px;opacity:0.07;transform:rotate(18deg)" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg"><path d="M100,20 C108,4 122,-2 118,14 C130,2 148,8 138,22 C152,12 162,22 154,34 C170,26 176,42 162,46 C178,46 180,62 164,62 C178,70 174,86 158,80 C166,94 156,106 144,96 C146,112 132,118 124,104 C120,120 106,122 102,106 C96,122 80,120 78,104 C68,116 54,110 60,96 C46,106 36,94 46,82 C30,86 26,70 42,66 C26,62 26,46 44,46 C28,42 30,26 46,32 C38,18 50,8 62,20 C60,4 76,-2 82,14 C86,2 100,4 100,20Z" fill="#4A6B4C"/><circle cx="168" cy="20" r="8" fill="#4A6B4C"/><circle cx="180" cy="34" r="5" fill="#4A6B4C"/><circle cx="22" cy="50" r="6" fill="#4A6B4C"/><circle cx="12" cy="38" r="3" fill="#4A6B4C"/></svg>
 <svg class="sp" style="top:35%;right:-10px;width:130px;opacity:0.06;transform:rotate(-40deg)" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg"><path d="M100,20 C108,4 122,-2 118,14 C130,2 148,8 138,22 C152,12 162,22 154,34 C170,26 176,42 162,46 C178,46 180,62 164,62 C178,70 174,86 158,80 C166,94 156,106 144,96 C146,112 132,118 124,104 C120,120 106,122 102,106 C96,122 80,120 78,104 C68,116 54,110 60,96 C46,106 36,94 46,82 C30,86 26,70 42,66 C26,62 26,46 44,46 C28,42 30,26 46,32 C38,18 50,8 62,20 C60,4 76,-2 82,14 C86,2 100,4 100,20Z" fill="#7C9A7E"/><circle cx="168" cy="20" r="9" fill="#7C9A7E"/><circle cx="182" cy="36" r="5" fill="#7C9A7E"/><circle cx="22" cy="50" r="6" fill="#7C9A7E"/><circle cx="10" cy="64" r="3" fill="#7C9A7E"/></svg>
@@ -271,7 +253,6 @@ footer span{color:var(--sage)}
     </div>
   </div>
 </section>
-
 <section class="cta-section" id="contact">
 <svg class="sp" style="top:10px;right:50px;width:120px;opacity:0.12;transform:rotate(25deg)" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg"><path d="M100,20 C108,4 122,-2 118,14 C130,2 148,8 138,22 C152,12 162,22 154,34 C170,26 176,42 162,46 C178,46 180,62 164,62 C178,70 174,86 158,80 C166,94 156,106 144,96 C146,112 132,118 124,104 C120,120 106,122 102,106 C96,122 80,120 78,104 C68,116 54,110 60,96 C46,106 36,94 46,82 C30,86 26,70 42,66 C26,62 26,46 44,46 C28,42 30,26 46,32 C38,18 50,8 62,20 C60,4 76,-2 82,14 C86,2 100,4 100,20Z" fill="#B8CDB9"/><circle cx="168" cy="20" r="9" fill="#B8CDB9"/><circle cx="180" cy="36" r="5" fill="#B8CDB9"/><circle cx="174" cy="8" r="4" fill="#B8CDB9"/><circle cx="22" cy="50" r="6" fill="#B8CDB9"/><circle cx="12" cy="36" r="3" fill="#B8CDB9"/></svg>
 <svg class="sp" style="bottom:20px;left:60px;width:80px;opacity:0.10;transform:rotate(-55deg)" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg"><path d="M100,20 C108,4 122,-2 118,14 C130,2 148,8 138,22 C152,12 162,22 154,34 C170,26 176,42 162,46 C178,46 180,62 164,62 C178,70 174,86 158,80 C166,94 156,106 144,96 C146,112 132,118 124,104 C120,120 106,122 102,106 C96,122 80,120 78,104 C68,116 54,110 60,96 C46,106 36,94 46,82 C30,86 26,70 42,66 C26,62 26,46 44,46 C28,42 30,26 46,32 C38,18 50,8 62,20 C60,4 76,-2 82,14 C86,2 100,4 100,20Z" fill="#B8CDB9"/><circle cx="168" cy="20" r="7" fill="#B8CDB9"/><circle cx="22" cy="50" r="5" fill="#B8CDB9"/><circle cx="14" cy="36" r="3" fill="#B8CDB9"/></svg>
